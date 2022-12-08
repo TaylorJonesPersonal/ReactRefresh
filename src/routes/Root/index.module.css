@@ -1,0 +1,12 @@
+.Root {
+    width: 100vw;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.Root__SideNav {
+    height: 100vh;
+    width: 250px;
+    background-color: red;
+}
