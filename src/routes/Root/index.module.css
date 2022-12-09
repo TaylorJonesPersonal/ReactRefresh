@@ -5,8 +5,48 @@
     flex-direction: row;
 }
 
-.Root__SideNav {
+.NavContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+}
+
+.NavContainer__SideNav {
     height: 100vh;
     width: 250px;
-    background-color: red;
+    background-color: #cc0044;
+    padding: 8px;
+    box-shadow: 2px 0px 3px #80002a;
+    position: fixed;
+}
+
+.Content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.Content__Headline {
+    width: 100%;
+    background-color: #cc0044;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 2px 3px #80002a;
+    padding-left: 12px;
+    margin-left: 1px;
+}
+
+.Content__Material {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    position: absolute;
+    left: 267px;
+    top: 119px;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-items: space-between;
 }

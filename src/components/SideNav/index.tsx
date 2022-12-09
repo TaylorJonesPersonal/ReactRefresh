@@ -1,23 +1,30 @@
 import { useState, useEffect } from 'react';
+import { CustomInputGroup } from '../CustomInputGroup';
 import { Contacts } from './types';
+import { Link } from 'react-router-dom';
+import styles from './index.module.css';
+import '../../App.module.css';
 
 const contactLoader = new Promise(resolve => {
     setTimeout(() => {
         resolve([
             {
+                id: 1,
                 name: 'Natawnee',
                 email: 'natawneetjk@gmail.com',
             },
             {
+                id: 2,
                 name: 'Zachary',
                 email: 'oddgnomemc99@gmail.com',
             },
             {
+                id: 3,
                 name: 'Donna',
                 email: 'djoinor1@charter.net',
             },
         ]);
-    });
+    }, 500);
 });
 
 export const SideNav: React.FC<any> = () => {
@@ -34,27 +41,34 @@ export const SideNav: React.FC<any> = () => {
     return (
         <>
             <div id="sidebar">
-                <h1>React Router Contacts</h1>
+                <h1 className="headings">{`Your contacts`}</h1>
                 <div>
-                    <form id="search-form" role="search">
-                        <input
-                            id="q"
-                            aria-label="Search contacts"
-                            placeholder="Search"
-                            type="search"
-                            name="q"
-                        />
-                        <div id="search-spinner" aria-hidden hidden={true} />
-                        <div className="sr-only" aria-live="polite"></div>
-                    </form>
-                    <form method="post">
-                        <button type="submit">New</button>
-                    </form>
+                    <CustomInputGroup
+                        inputSet={[
+                            {
+                                label: 'New contact: ',
+                                type: 'password',
+                            },
+                            {
+                                label: 'Submit',
+                                type: 'button',
+                                onClick: () => console.log('PRESSED.'),
+                            },
+                        ]}
+                    />
                 </div>
                 <nav>
-                    <ul>
+                    <ul className={styles.ContactsList}>
                         {myContacts.map((contact: Contacts, index) => (
-                            <li key={index}>{contact.name}</li>
+                            <li>
+                                <Link
+                                    to={`contacts/${contact.id}`}
+                                    className={styles.ContactsList__items}
+                                    key={index}
+                                >
+                                    {contact.name}
+                                </Link>
+                            </li>
                         ))}
                     </ul>
                 </nav>

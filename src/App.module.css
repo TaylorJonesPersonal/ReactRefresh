@@ -1,0 +1,12 @@
+:global(.labels) {
+    color: #391326;
+    font-weight: 700;
+}
+
+:global(.headings) {
+    color: #391326;
+}
+
+:global(.links) {
+    color: #391326;
+}

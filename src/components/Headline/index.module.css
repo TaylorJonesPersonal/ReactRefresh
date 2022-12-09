@@ -1,0 +1,27 @@
+.Headline {
+    width: 100%;
+    background-color: #cc0044;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin-left: 250px;
+    padding-left: 20px;
+}
+
+.Headline__Logo {
+    display: flex;
+    flex: 0.9;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Tools {
+    display: flex;
+    flex: 0.1;
+    flex-direction: column;
+    padding-top: 6px;
+}
+
+.Tools__Links {
+    color: #391326;
+}

@@ -1,0 +1,12 @@
+.Anchor {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.Anchor__Text {
+    font-weight: 200;
+    font-family: Arial;
+    font-style: italic;
+    color: #e6004c;
+}
