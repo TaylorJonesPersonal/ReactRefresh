@@ -1,0 +1,9 @@
+.ContactsList {
+    list-style: lower-greek;
+}
+
+.ContactsList__items {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+    color: #391326;
+}
