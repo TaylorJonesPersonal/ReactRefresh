@@ -15,6 +15,11 @@
     align-items: center;
 }
 
+.Headline__Link {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .Tools {
     display: flex;
     flex: 0.1;

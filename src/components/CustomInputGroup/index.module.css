@@ -1,0 +1,8 @@
+.ButtonList {
+    display: flex;
+    flex-direction: row;
+}
+
+.ButtonListVertical {
+    flex-direction: column;
+}

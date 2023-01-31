@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './index.module.css';
 import '../../App.module.css';
 
 export enum InputTypes {
@@ -16,26 +17,28 @@ export interface CustomInputParams {
 
 export interface CustomInputGroupParams {
     inputSet: CustomInputParams[];
+    row: boolean;
 }
 
 export const CustomInputGroup: React.FC<any> = ({
     inputSet,
+    row,
 }: CustomInputGroupParams) => {
     return (
-        <div>
-            {inputSet.map((input: CustomInputParams) => {
+        <div className={row ? styles.ButtonList : styles.ButtonListVertical}>
+            {inputSet.map((input: CustomInputParams, index: number) => {
                 if (
                     input.type === InputTypes.BUTTON ||
                     input.type === InputTypes.SUBMIT
                 ) {
                     return (
-                        <>
-                            <input
-                                type={input.type}
-                                onClick={input.onClick}
-                                value={input.label}
-                            />
-                        </>
+                        <input
+                            key={index}
+                            className="buttons"
+                            type={input.type}
+                            onClick={input.onClick}
+                            value={input.label}
+                        />
                     );
                 } else {
                     return (

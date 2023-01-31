@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CustomInputGroup } from '../CustomInputGroup';
+import { CustomInputGroup, InputTypes } from '../CustomInputGroup';
 import { Contacts } from './types';
 import { Link } from 'react-router-dom';
 import styles from './index.module.css';
@@ -44,14 +44,15 @@ export const SideNav: React.FC<any> = () => {
                 <h1 className="headings">{`Your contacts`}</h1>
                 <div>
                     <CustomInputGroup
+                        row={false}
                         inputSet={[
                             {
                                 label: 'New contact: ',
-                                type: 'password',
+                                type: InputTypes.PASSWORD,
                             },
                             {
                                 label: 'Submit',
-                                type: 'button',
+                                type: InputTypes.BUTTON,
                                 onClick: () => console.log('PRESSED.'),
                             },
                         ]}
@@ -59,12 +60,11 @@ export const SideNav: React.FC<any> = () => {
                 </div>
                 <nav>
                     <ul className={styles.ContactsList}>
-                        {myContacts.map((contact: Contacts, index) => (
-                            <li>
+                        {myContacts.map((contact: Contacts, index: number) => (
+                            <li key={index}>
                                 <Link
                                     to={`contacts/${contact.id}`}
                                     className={styles.ContactsList__items}
-                                    key={index}
                                 >
                                     {contact.name}
                                 </Link>
@@ -73,7 +73,6 @@ export const SideNav: React.FC<any> = () => {
                     </ul>
                 </nav>
             </div>
-            <div id="detail"></div>
         </>
     );
 };

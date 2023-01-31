@@ -5,7 +5,7 @@ import { Headline } from '../../components/Headline';
 import { SideNav } from '../../components/SideNav';
 import styles from './index.module.css';
 
-export const Root: React.FC<any> = () => {
+export const Home: React.FC<any> = () => {
     return (
         <div className={styles.Root}>
             <div className={styles.NavContainer}>
@@ -17,8 +17,12 @@ export const Root: React.FC<any> = () => {
                         <Headline />
                     </div>
                     <div className={styles.Content__Material}>
-                        <Outlet />
-                        <Anchor />
+                        <div>
+                            <Outlet />
+                        </div>
+                        <div>
+                            <Anchor />
+                        </div>
                     </div>
                 </div>
             </div>
